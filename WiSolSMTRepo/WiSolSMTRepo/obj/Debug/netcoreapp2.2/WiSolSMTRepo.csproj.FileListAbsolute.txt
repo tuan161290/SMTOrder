@@ -1,0 +1,28 @@
+C:\Users\HP\Documents\GitHub\WisolSMT\WiSolSMTRepo\WiSolSMTRepo\bin\Debug\netcoreapp2.2\WiSolSMTRepo.deps.json
+C:\Users\HP\Documents\GitHub\WisolSMT\WiSolSMTRepo\WiSolSMTRepo\bin\Debug\netcoreapp2.2\WiSolSMTRepo.runtimeconfig.json
+C:\Users\HP\Documents\GitHub\WisolSMT\WiSolSMTRepo\WiSolSMTRepo\bin\Debug\netcoreapp2.2\WiSolSMTRepo.runtimeconfig.dev.json
+C:\Users\HP\Documents\GitHub\WisolSMT\WiSolSMTRepo\WiSolSMTRepo\bin\Debug\netcoreapp2.2\WiSolSMTRepo.dll
+C:\Users\HP\Documents\GitHub\WisolSMT\WiSolSMTRepo\WiSolSMTRepo\bin\Debug\netcoreapp2.2\WiSolSMTRepo.pdb
+C:\Users\HP\Documents\GitHub\WisolSMT\WiSolSMTRepo\WiSolSMTRepo\obj\Debug\netcoreapp2.2\WiSolSMTRepo.csprojAssemblyReference.cache
+C:\Users\HP\Documents\GitHub\WisolSMT\WiSolSMTRepo\WiSolSMTRepo\obj\Debug\netcoreapp2.2\WiSolSMTRepo.csproj.CoreCompileInputs.cache
+C:\Users\HP\Documents\GitHub\WisolSMT\WiSolSMTRepo\WiSolSMTRepo\obj\Debug\netcoreapp2.2\WiSolSMTRepo.RazorAssemblyInfo.cache
+C:\Users\HP\Documents\GitHub\WisolSMT\WiSolSMTRepo\WiSolSMTRepo\obj\Debug\netcoreapp2.2\WiSolSMTRepo.RazorAssemblyInfo.cs
+C:\Users\HP\Documents\GitHub\WisolSMT\WiSolSMTRepo\WiSolSMTRepo\obj\Debug\netcoreapp2.2\WiSolSMTRepo.AssemblyInfoInputs.cache
+C:\Users\HP\Documents\GitHub\WisolSMT\WiSolSMTRepo\WiSolSMTRepo\obj\Debug\netcoreapp2.2\WiSolSMTRepo.AssemblyInfo.cs
+C:\Users\HP\Documents\GitHub\WisolSMT\WiSolSMTRepo\WiSolSMTRepo\obj\Debug\netcoreapp2.2\WiSolSMTRepo.RazorTargetAssemblyInfo.cache
+C:\Users\HP\Documents\GitHub\WisolSMT\WiSolSMTRepo\WiSolSMTRepo\obj\Debug\netcoreapp2.2\WiSolSMTRepo.dll
+C:\Users\HP\Documents\GitHub\WisolSMT\WiSolSMTRepo\WiSolSMTRepo\obj\Debug\netcoreapp2.2\WiSolSMTRepo.pdb
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\WiSolSMTRepo\WiSolSMTRepo\bin\Debug\netcoreapp2.2\WiSolSMTRepo.deps.json
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\WiSolSMTRepo\WiSolSMTRepo\bin\Debug\netcoreapp2.2\WiSolSMTRepo.runtimeconfig.json
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\WiSolSMTRepo\WiSolSMTRepo\bin\Debug\netcoreapp2.2\WiSolSMTRepo.runtimeconfig.dev.json
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\WiSolSMTRepo\WiSolSMTRepo\bin\Debug\netcoreapp2.2\WiSolSMTRepo.dll
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\WiSolSMTRepo\WiSolSMTRepo\bin\Debug\netcoreapp2.2\WiSolSMTRepo.pdb
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\WiSolSMTRepo\WiSolSMTRepo\obj\Debug\netcoreapp2.2\WiSolSMTRepo.csprojAssemblyReference.cache
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\WiSolSMTRepo\WiSolSMTRepo\obj\Debug\netcoreapp2.2\WiSolSMTRepo.csproj.CoreCompileInputs.cache
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\WiSolSMTRepo\WiSolSMTRepo\obj\Debug\netcoreapp2.2\WiSolSMTRepo.RazorAssemblyInfo.cache
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\WiSolSMTRepo\WiSolSMTRepo\obj\Debug\netcoreapp2.2\WiSolSMTRepo.RazorAssemblyInfo.cs
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\WiSolSMTRepo\WiSolSMTRepo\obj\Debug\netcoreapp2.2\WiSolSMTRepo.AssemblyInfoInputs.cache
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\WiSolSMTRepo\WiSolSMTRepo\obj\Debug\netcoreapp2.2\WiSolSMTRepo.AssemblyInfo.cs
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\WiSolSMTRepo\WiSolSMTRepo\obj\Debug\netcoreapp2.2\WiSolSMTRepo.RazorTargetAssemblyInfo.cache
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\WiSolSMTRepo\WiSolSMTRepo\obj\Debug\netcoreapp2.2\WiSolSMTRepo.dll
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\WiSolSMTRepo\WiSolSMTRepo\obj\Debug\netcoreapp2.2\WiSolSMTRepo.pdb

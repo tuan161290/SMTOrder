@@ -1,0 +1,1 @@
+[{"Key":"COMPort","Value":"COM7"},{"Key":"WorkingMode","Value":"0"},{"Key":"DefaultLots","Value":"24"},{"Key":"DefaultLevel","Value":"15"},{"Key":"LineID","Value":"SMT-I"},{"Key":"LineStatus","Value":"1"},{"Key":"SelectedProduct","Value":"{\"ProductID\":1,\"Name\":\"L7E0\",\"Orders\":null,\"PlanInfos\":null,\"IsActive\":false}"}]

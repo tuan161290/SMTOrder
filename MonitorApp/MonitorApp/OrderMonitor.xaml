@@ -1,0 +1,101 @@
+﻿<UserControl x:Class="MonitorApp.OrderMonitor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MonitorApp"
+             mc:Ignorable="d" 
+             xmlns:converter="clr-namespace:MonitorApp.Converter"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <converter:TextToColorConverter x:Key="TextToColorConverter"/>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <TextBlock Text="SMT ORDERS" FontSize="24" Foreground="Purple"/>
+        </Grid>
+        <ListView Grid.Row="1" Margin="10" ItemsSource="{Binding UnconfirmOrders}">
+            <ListView.Style>
+                <Style TargetType="ListView">
+                    <Setter Property="BorderThickness" Value="0"/>
+                    <Setter Property="ItemContainerStyle">
+                        <Setter.Value>
+                            <Style TargetType="ListViewItem">
+                                <!--<Setter Property="Background" Value="AliceBlue"/>-->
+                                <Setter Property="Focusable" Value="False"/>
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                                <Setter Property="Margin" Value="5"/>
+                                <Setter Property="Padding" Value="-1"/>
+                                <Setter Property="VerticalAlignment" Value="Stretch"/>
+                                <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+                            </Style>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ListView.Style>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderThickness="2" 
+                            Background="{Binding Reason, Converter={StaticResource TextToColorConverter}, 
+                                                           ConverterParameter=border}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="3*"/>
+                            </Grid.ColumnDefinitions>
+                            <Border BorderThickness="1" BorderBrush="LightGray">
+                                <TextBlock>
+                            <Run Text="LINE:"/>
+                            <Run Text="{Binding LineInfo.Name}" Foreground="SteelBlue"/>
+                                </TextBlock>
+                            </Border>
+                            <Border Grid.Column="1" BorderThickness="0,1,1,1" BorderBrush="LightGray">
+                                <TextBlock>
+                            <Run Text="MODEL:"/>
+                            <Run Text="{Binding Product.Name}" Foreground="SteelBlue"/>
+                                </TextBlock>
+                            </Border>
+
+                            <Border Grid.Column="2" BorderThickness="0,1,1,1" BorderBrush="LightGray">
+                                <TextBlock>
+                            <Run Text="Amount:"/>
+                            <Run Text="{Binding Amount}" Foreground="SteelBlue"/>
+                                </TextBlock>
+                            </Border>
+
+                            <Border Grid.Column="3" BorderThickness="0,1,1,1" BorderBrush="LightGray">
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Content="OK" Margin="5" Click="Button_Click" Width="120"
+                                            Tag="ok"
+                                            Background="{Binding Reason, Converter={StaticResource TextToColorConverter}, ConverterParameter=ok}" />
+                                    <Button Content="JIG SHORTAGE" Click="Button_Click" Margin="5"
+                                            Tag="jig-shortage"
+                                            Background="{Binding Reason, Converter={StaticResource TextToColorConverter}, ConverterParameter=jig-shortage}"/>
+                                    <Button Content="MGZ SHORTAGE" Click="Button_Click" Margin="5"
+                                            Tag="magazin-shortage"
+                                            Background="{Binding Reason, Converter={StaticResource TextToColorConverter}, ConverterParameter=magazin-shortage}"/>
+                                    <Button Content="PLM WAITING" Click="Button_Click" Margin="5"
+                                            Tag="plasma-waiting"
+                                            Background="{Binding Reason, Converter={StaticResource TextToColorConverter}, ConverterParameter=plasma-waiting}"/>
+                                    <Button Content="PCB SHORTAGE" Click="Button_Click" Margin="5"
+                                            Tag="pcb-shortage"
+                                            Background="{Binding Reason, Converter={StaticResource TextToColorConverter}, ConverterParameter=pcb-shortage}"/>
+                                </StackPanel>
+                            </Border>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <MediaElement Name="myMediaElement" Grid.Row="3" Source="Melody.mp3" Visibility="Collapsed"
+         LoadedBehavior="Manual" UnloadedBehavior="Stop" Stretch="Fill"/>
+    </Grid>
+</UserControl>

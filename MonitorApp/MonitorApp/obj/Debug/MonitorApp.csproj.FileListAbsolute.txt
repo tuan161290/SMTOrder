@@ -1,0 +1,44 @@
+C:\Users\HP\Documents\GitHub\WisolSMT\MonitorApp\MonitorApp\bin\Debug\MonitorApp.exe.config
+C:\Users\HP\Documents\GitHub\WisolSMT\MonitorApp\MonitorApp\bin\Debug\MonitorApp.exe
+C:\Users\HP\Documents\GitHub\WisolSMT\MonitorApp\MonitorApp\bin\Debug\MonitorApp.pdb
+C:\Users\HP\Documents\GitHub\WisolSMT\MonitorApp\MonitorApp\bin\Debug\Newtonsoft.Json.dll
+C:\Users\HP\Documents\GitHub\WisolSMT\MonitorApp\MonitorApp\bin\Debug\Newtonsoft.Json.xml
+C:\Users\HP\Documents\GitHub\WisolSMT\MonitorApp\MonitorApp\obj\Debug\MainWindow.g.cs
+C:\Users\HP\Documents\GitHub\WisolSMT\MonitorApp\MonitorApp\obj\Debug\App.g.cs
+C:\Users\HP\Documents\GitHub\WisolSMT\MonitorApp\MonitorApp\obj\Debug\MonitorApp_MarkupCompile.cache
+C:\Users\HP\Documents\GitHub\WisolSMT\MonitorApp\MonitorApp\obj\Debug\MonitorApp_MarkupCompile.lref
+C:\Users\HP\Documents\GitHub\WisolSMT\MonitorApp\MonitorApp\obj\Debug\MainWindow.baml
+C:\Users\HP\Documents\GitHub\WisolSMT\MonitorApp\MonitorApp\obj\Debug\MonitorApp.g.resources
+C:\Users\HP\Documents\GitHub\WisolSMT\MonitorApp\MonitorApp\obj\Debug\MonitorApp.Properties.Resources.resources
+C:\Users\HP\Documents\GitHub\WisolSMT\MonitorApp\MonitorApp\obj\Debug\MonitorApp.csproj.GenerateResource.cache
+C:\Users\HP\Documents\GitHub\WisolSMT\MonitorApp\MonitorApp\obj\Debug\MonitorApp.csproj.CoreCompileInputs.cache
+C:\Users\HP\Documents\GitHub\WisolSMT\MonitorApp\MonitorApp\obj\Debug\MonitorApp.csproj.CopyComplete
+C:\Users\HP\Documents\GitHub\WisolSMT\MonitorApp\MonitorApp\obj\Debug\MonitorApp.exe
+C:\Users\HP\Documents\GitHub\WisolSMT\MonitorApp\MonitorApp\obj\Debug\MonitorApp.pdb
+C:\Users\HP\Documents\GitHub\WisolSMT\MonitorApp\MonitorApp\obj\Debug\App.baml
+C:\Users\HP\Documents\GitHub\WisolSMT\MonitorApp\MonitorApp\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\HP\Documents\GitHub\WisolSMT\MonitorApp\MonitorApp\obj\Debug\MonitorApp.csprojAssemblyReference.cache
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\MonitorApp\MonitorApp\obj\Debug\MonitorApp.csprojAssemblyReference.cache
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\MonitorApp\MonitorApp\obj\Debug\MainWindow.g.cs
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\MonitorApp\MonitorApp\obj\Debug\App.g.cs
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\MonitorApp\MonitorApp\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\MonitorApp\MonitorApp\obj\Debug\MonitorApp_MarkupCompile.cache
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\MonitorApp\MonitorApp\obj\Debug\MonitorApp_MarkupCompile.lref
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\MonitorApp\MonitorApp\obj\Debug\MonitorApp.exe
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\MonitorApp\MonitorApp\obj\Debug\MonitorApp.pdb
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\MonitorApp\MonitorApp\bin\Debug\MonitorApp.exe.config
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\MonitorApp\MonitorApp\bin\Debug\MonitorApp.exe
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\MonitorApp\MonitorApp\bin\Debug\MonitorApp.pdb
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\MonitorApp\MonitorApp\bin\Debug\Newtonsoft.Json.dll
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\MonitorApp\MonitorApp\bin\Debug\Newtonsoft.Json.xml
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\MonitorApp\MonitorApp\obj\Debug\App.baml
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\MonitorApp\MonitorApp\obj\Debug\MainWindow.baml
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\MonitorApp\MonitorApp\obj\Debug\MonitorApp.g.resources
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\MonitorApp\MonitorApp\obj\Debug\MonitorApp.Properties.Resources.resources
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\MonitorApp\MonitorApp\obj\Debug\MonitorApp.csproj.GenerateResource.cache
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\MonitorApp\MonitorApp\obj\Debug\MonitorApp.csproj.CoreCompileInputs.cache
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\MonitorApp\MonitorApp\obj\Debug\MonitorApp.csproj.CopyComplete
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\MonitorApp\MonitorApp\obj\Debug\OrderMonitor.g.cs
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\MonitorApp\MonitorApp\obj\Debug\OrderMonitor.baml
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\MonitorApp\MonitorApp\obj\Debug\LineMonitor.g.cs
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\MonitorApp\MonitorApp\obj\Debug\LineMonitor.baml

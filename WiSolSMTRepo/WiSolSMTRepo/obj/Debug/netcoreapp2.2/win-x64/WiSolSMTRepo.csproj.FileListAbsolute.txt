@@ -1,0 +1,17 @@
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\WiSolSMTRepo\WiSolSMTRepo\bin\Debug\netcoreapp2.2\win-x64\hostpolicy.dll
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\WiSolSMTRepo\WiSolSMTRepo\bin\Debug\netcoreapp2.2\win-x64\hostfxr.dll
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\WiSolSMTRepo\WiSolSMTRepo\bin\Debug\netcoreapp2.2\win-x64\WiSolSMTRepo.exe
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\WiSolSMTRepo\WiSolSMTRepo\bin\Debug\netcoreapp2.2\win-x64\WiSolSMTRepo.deps.json
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\WiSolSMTRepo\WiSolSMTRepo\bin\Debug\netcoreapp2.2\win-x64\WiSolSMTRepo.runtimeconfig.json
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\WiSolSMTRepo\WiSolSMTRepo\bin\Debug\netcoreapp2.2\win-x64\WiSolSMTRepo.runtimeconfig.dev.json
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\WiSolSMTRepo\WiSolSMTRepo\bin\Debug\netcoreapp2.2\win-x64\WiSolSMTRepo.dll
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\WiSolSMTRepo\WiSolSMTRepo\bin\Debug\netcoreapp2.2\win-x64\WiSolSMTRepo.pdb
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\WiSolSMTRepo\WiSolSMTRepo\obj\Debug\netcoreapp2.2\win-x64\WiSolSMTRepo.csprojAssemblyReference.cache
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\WiSolSMTRepo\WiSolSMTRepo\obj\Debug\netcoreapp2.2\win-x64\WiSolSMTRepo.csproj.CoreCompileInputs.cache
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\WiSolSMTRepo\WiSolSMTRepo\obj\Debug\netcoreapp2.2\win-x64\WiSolSMTRepo.RazorAssemblyInfo.cache
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\WiSolSMTRepo\WiSolSMTRepo\obj\Debug\netcoreapp2.2\win-x64\WiSolSMTRepo.RazorAssemblyInfo.cs
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\WiSolSMTRepo\WiSolSMTRepo\obj\Debug\netcoreapp2.2\win-x64\WiSolSMTRepo.AssemblyInfoInputs.cache
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\WiSolSMTRepo\WiSolSMTRepo\obj\Debug\netcoreapp2.2\win-x64\WiSolSMTRepo.AssemblyInfo.cs
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\WiSolSMTRepo\WiSolSMTRepo\obj\Debug\netcoreapp2.2\win-x64\WiSolSMTRepo.RazorTargetAssemblyInfo.cache
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\WiSolSMTRepo\WiSolSMTRepo\obj\Debug\netcoreapp2.2\win-x64\WiSolSMTRepo.dll
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\WiSolSMTRepo\WiSolSMTRepo\obj\Debug\netcoreapp2.2\win-x64\WiSolSMTRepo.pdb
