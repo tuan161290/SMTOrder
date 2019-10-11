@@ -66,6 +66,7 @@
     <Compile Include="Controller.cs" />
     <Compile Include="GPIO\GPIOHelper.cs" />
     <Compile Include="GPIO\SerialHelper.cs" />
+    <Compile Include="Model\FluxOrder.cs" />
     <Compile Include="Model\LineInfo.cs" />
     <Compile Include="Model\Order.cs" />
     <Compile Include="Model\Plan.cs" />
@@ -92,6 +93,7 @@
     <Compile Include="TextHelper.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\ConfirmOrderViewModel.cs" />
+    <Compile Include="ViewModel\FluxOrderViewModel.cs" />
     <Compile Include="ViewModel\MonitorViewModel.cs" />
     <Compile Include="ViewModel\OrderViewModel.cs" />
     <Compile Include="ViewModel\PlanViewModel.cs" />
@@ -163,6 +165,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Assert\Wisol.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -9,6 +9,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
         <converter:OrderStatusToColorConverter x:Key="OrderStatusToColorConverter"/>
+        <converter:FluxOrderStatusToColorConverter x:Key="FluxOrderStatusToColorConverter"/>
     </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -16,8 +17,21 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Grid>
-            <TextBlock Text="SMT LINE MONITOR" FontSize="24" Foreground="Purple"/>
+        <Grid Margin="10">
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" MappingMode="RelativeToBoundingBox">
+                    <GradientStop Color="White" Offset="0.3"/>
+                    <GradientStop Color="SteelBlue" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <TextBlock Text="SMT LINE MONITOR" Margin="84,0,0,0" FontSize="24" Foreground="SteelBlue"/>
+            <TextBlock FontWeight="DemiBold" Margin="0,0,5,0" FontSize="18" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+                <Run  Foreground="Green" Text="T"/>
+                <Run  Foreground="Blue" Text="F"/>
+                <Run  Foreground="Black" Text="S"/>
+                <Run  Foreground="White" Text=" VINA"/>
+            </TextBlock>
+            <Image Margin="10,0,0,0" Source="./Assert/Wisol.png" Width="64" HorizontalAlignment="Left"/>
         </Grid>
         <ListView Grid.Row="1" Margin="10" ItemsSource="{Binding LineInfos}">
             <ListView.Style>
@@ -54,6 +68,7 @@
                                 <RowDefinition />
                                 <RowDefinition />
                                 <RowDefinition />
+                                <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
                             <Border BorderThickness="0,0,0,1" BorderBrush="LightGray" Background="{Binding WorkingStatus, Converter={StaticResource OrderStatusToColorConverter}}">
                                 <TextBlock FontSize="24">
@@ -87,6 +102,24 @@
                                     <Run Text="REMAIN:"/>
                                     <Run Text="{Binding Remain}" Foreground="SteelBlue"/>
                                 </TextBlock>
+                            </Border>
+
+                            <Border Grid.Row="5" BorderThickness="0,0,0,1" BorderBrush="LightGray">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Button Click="FluxOrderAction_Click" Background="{Binding FluxOrderVM.FLuxOrderStatus, Converter={StaticResource FluxOrderStatusToColorConverter}}">
+                                        <TextBlock FontSize="16" Foreground="Black">
+                                            <Run Text="{Binding FluxOrderVM.FLuxOrderStatus}"/>
+                                        </TextBlock>
+                                    </Button>
+                                    <TextBlock FontSize="16" Grid.Column="1">
+                                        <Run Text="{Binding FluxOrderVM.Duration, StringFormat={}{0:hh\\:mm\\:ss}}"/>
+                                    </TextBlock>
+                                </Grid>
+
                             </Border>
                         </Grid>
                     </Border>

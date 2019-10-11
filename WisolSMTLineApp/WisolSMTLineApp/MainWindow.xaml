@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WisolSMTLineApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="480" Width="800">
+        Title="Wisol SMT Order" Height="600" Width="800">
     <Window.Resources>
         <Style TargetType="TabItem">
             <Setter Property="FontSize" Value="16"/>
@@ -16,6 +16,21 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        <Grid>
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" MappingMode="RelativeToBoundingBox">
+                    <GradientStop Color="White" Offset="0.3"/>
+                    <GradientStop Color="SteelBlue" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <TextBlock FontWeight="DemiBold" Margin="0,0,5,0" FontSize="18" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+                <Run  Foreground="Green" Text="T"/>
+                <Run  Foreground="Blue" Text="F"/>
+                <Run  Foreground="Black" Text="S"/>
+                <Run  Foreground="White" Text=" VINA"/>
+            </TextBlock>
+            <Image Margin="10,0,0,0" Source="./Assert/Wisol.png" Width="64" HorizontalAlignment="Left"/>
+        </Grid>
         <TabControl Name="MainTab" Grid.Row="1">
             <TabControl.Resources>
                 <Style TargetType="{x:Type TabItem}">
@@ -26,8 +41,7 @@
                                     <ContentPresenter x:Name="ContentSite"
                                         VerticalAlignment="Center"
                                         HorizontalAlignment="Center"
-                                        ContentSource="Header"
-                                        
+                                        ContentSource="Header"                                        
                                         Margin="10,5"/>
                                 </Border>
                                 <ControlTemplate.Triggers>

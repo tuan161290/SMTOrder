@@ -33,7 +33,7 @@ namespace MonitorApp
             DataContext = this;
             Loaded += OrderMonitor_Loaded;
             Unloaded += OrderMonitor_Unloaded;
-            Init();
+            //Init();
 
         }
 
@@ -177,9 +177,9 @@ namespace MonitorApp
                 }
                 catch
                 {
-
+                    return;
                 }
-                await Task.Delay(2000);
+                await Task.Delay(1000);
             }
         }
     }

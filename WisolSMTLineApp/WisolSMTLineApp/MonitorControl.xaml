@@ -25,6 +25,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <TextBlock Text="Status:"/>
@@ -59,8 +60,20 @@
         <TextBlock Grid.Column="1" Grid.Row="5" Text="{Binding OrderDuration}" HorizontalAlignment="Center"/>
 
         <TextBlock Text="Action:" TextWrapping="Wrap" Grid.Row="6"/>
-        <Button  Grid.Column="1" Margin="10" Command="{Binding OrderCommand}" Grid.Row="6">
-            <TextBlock Grid.Column="1" Grid.Row="5" Text="Confirm" HorizontalAlignment="Center"/>
-        </Button>
+        <Button  Grid.Column="1" Margin="10" Command="{Binding OrderCommand}" Content="Confirm" Grid.Row="6" HorizontalAlignment="Stretch"/>
+        <!--<TextBlock Grid.Column="1" Grid.Row="5"  HorizontalAlignment="Center"/>-->
+
+
+        <TextBlock Text="Flux:" TextWrapping="Wrap" Grid.Row="7"/>
+        <Grid  Grid.Column="1" Margin="10" Grid.Row="7">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Content="Solder Order"  Command="{Binding CreateFluxOrderCommand}"/>
+            <Button Content="Solder Confirm" Command="{Binding ConfirmFluxOrderCommand}" Grid.Column="1"/>
+            <TextBlock Text="00:00:00" Grid.Column="2"/>
+        </Grid>
     </Grid>
 </UserControl>

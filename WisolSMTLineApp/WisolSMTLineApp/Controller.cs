@@ -25,8 +25,9 @@ namespace WisolSMTLineApp
             _httpClient = new HttpClient(_httpClientHandler);
             //_httpClient.BaseAddress = new Uri("http://45.119.212.111:5000/");
             //_httpClient.BaseAddress = new Uri("http://192.168.0.5:5000/api/v0.1/");
-            _httpClient.BaseAddress = new Uri("http://10.70.10.52:4567/api/");
-            //_httpClient.BaseAddress = new Uri("http://localhost:6789/api/");
+            //_httpClient.BaseAddress = new Uri("http://10.70.10.52:4567/api/");
+            //_httpClient.BaseAddress = new Uri("http://localhost:50479/api/");
+            _httpClient.BaseAddress = new Uri("http://localhost:5000/api/");
             _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             _httpClient.MaxResponseContentBufferSize = 256000;
             TimeSpan timeout = TimeSpan.FromSeconds(4);
@@ -181,6 +182,66 @@ namespace WisolSMTLineApp
                     return false;
                 }
             }
+        }
+
+        public async Task<bool> UpdateFluxOrder(FluxOrder Obj)
+        {
+            var jsonObj = JsonConvert.SerializeObject(Obj);
+            using (var content = new StringContent(jsonObj, Encoding.UTF8, "application/json"))
+            {
+                try
+                {
+                    var ret = await _httpClient.PutAsync("FluxOrders/PutFluxOrder/" + Obj.FluxOrderID, content);
+                    var res = await ret.Content.ReadAsStringAsync();
+                    return ret.IsSuccessStatusCode;
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+            }
+        }
+
+        public async Task<bool> CreateFluxOrderAsync(FluxOrder fluxOrder)
+        {
+            var jsonObj = JsonConvert.SerializeObject(fluxOrder);
+            using (var content = new StringContent(jsonObj, Encoding.UTF8, "application/json"))
+            {
+                try
+                {
+                    var ret = await _httpClient.PostAsync("FluxOrders/CreateFluxOrder", content);
+                    var res = ret.Content.ReadAsStringAsync();
+                    return ret.IsSuccessStatusCode;
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+            }
+        }
+
+        public async Task<FluxOrder> GetUnfinishFluxOrderAsync(int lineID)
+        {
+            FluxOrder UnfinishFluxOrder = null;
+            try
+            {
+                string url = "FluxOrders/GetUnfinishFluxOrder/" + lineID;
+                using (var response = await _httpClient.GetAsync(url))
+                {
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var content = await response.Content.ReadAsStringAsync();
+                        FluxOrder resMsg = JsonConvert.DeserializeObject<FluxOrder>(content);
+                        if (resMsg != null)
+                            UnfinishFluxOrder = resMsg;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+            return UnfinishFluxOrder;
         }
 
         public List<LineInfo> getLstLine()

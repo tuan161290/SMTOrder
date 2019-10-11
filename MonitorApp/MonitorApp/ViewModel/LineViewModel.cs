@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MonitorApp.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -80,6 +81,19 @@ namespace MonitorApp.ViewModel
             }
         }
 
+        FluxOrder _FluxOrderVM;
+        public FluxOrder FluxOrderVM
+        {
+            get { return _FluxOrderVM; }
+            set
+            {
+                if (_FluxOrderVM != value)
+                {
+                    _FluxOrderVM = value;
+                    NotifyPropertyChanged(nameof(FluxOrderVM));
+                }
+            }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
         void NotifyPropertyChanged(string proName)

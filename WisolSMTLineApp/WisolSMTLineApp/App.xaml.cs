@@ -33,19 +33,19 @@ namespace WisolSMTLineApp
         private void Init()
         {
             TextHelper.InitSetting();
-            var COMport = TextHelper.ReadSetting("COMPort");
+            //var COMport = TextHelper.ReadSetting("COMPort");
             try
             {
 
                 if (GPIOBoard.GPIOCOM == null)
                 {
-                    GPIOBoard.GPIOCOM = new GPIOSerial(COMport);
+                    //GPIOBoard.GPIOCOM = new GPIOSerial(COMport);
                     foreach (OutputPin OutputPin in F0.OutputPins)
                     {
                         OutputPin.Board = F0;
                     }
                 }
-                Loop();
+                //Loop();
             }
             catch (Exception ex)
             {

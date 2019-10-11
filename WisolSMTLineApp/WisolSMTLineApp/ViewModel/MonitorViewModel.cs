@@ -69,7 +69,6 @@ namespace WisolSMTLineApp.ViewModel
             {
             }
         }
-
         private async Task LightConstanslyOn()
         {
             if (LightCancelationTS != null)
@@ -190,6 +189,48 @@ namespace WisolSMTLineApp.ViewModel
             //WorkingStatus = WorkingStatus.NO_PRODUCTION;
         }
 
+        private async void CreateFluxOrder()
+        {
+            if ((await Api.Controller.GetUnfinishFluxOrderAsync(Setting.SelectedLine.LineInfoID)) == null)
+            {
+                FluxOrder FluxOrder = new FluxOrder()
+                {
+                    CreatedTime = DateTime.Now,
+                    FLuxOrderStatus = FLuxOrderStatus.WAITING,
+                    LineInfoID = Setting.SelectedLine.LineInfoID
+                };
+                if (await Api.Controller.CreateFluxOrderAsync(FluxOrder))
+                {
+                    MessageBox.Show("Solder order create successfully");
+                }
+            }
+            else
+                MessageBox.Show("Solder order has already created");
+        }
+        private async void ConfirmFluxOrder()
+        {
+            var FluxOrder = await Api.Controller.GetUnfinishFluxOrderAsync(Setting.SelectedLine.LineInfoID);
+            if (FluxOrder != null)
+            {
+                if (FluxOrder.FLuxOrderStatus == FLuxOrderStatus.OK || FluxOrder.FLuxOrderStatus == FLuxOrderStatus.READY)
+                {
+                    FluxOrder.IsFinished = true;
+                    if (await Api.Controller.UpdateFluxOrder(FluxOrder))
+                    {
+                        MessageBox.Show("Solder order confirmed successfully");
+                    }
+                    else
+                        MessageBox.Show("Error, Something happened!");
+                }
+                else
+                {
+                    MessageBox.Show("Solder is not ready!");
+                }
+            }
+
+        }
+
+
         CancellationTokenSource UpdateUITaskCTS;
         public void CancelTask()
         {
@@ -237,9 +278,13 @@ namespace WisolSMTLineApp.ViewModel
 
                     Order LastOrder = null;
                     var Orders = await Api.Controller.getLstOrderNotFinishAsync(Setting.SelectedLine.LineInfoID);
-                    if (Orders != null)
+                    var Plan = await Api.Controller.GetProductionPlanAsync(Setting.SelectedLine.LineInfoID, Setting.SelectedProduct.ProductID);
+                    if (Orders != null && Plan != null)
+                    {
                         if (Orders.Count > 0)
                             LastOrder = Orders.Where(x => x.ProductID == Setting.SelectedProduct.ProductID).First();
+                    }
+
                     if (LastOrder != null)
                     {
                         UnconfirmOrder = LastOrder;
@@ -255,13 +300,10 @@ namespace WisolSMTLineApp.ViewModel
                             StartTime = DateTime.Now;
                             OrderDuration = $"{LastOrder.Reason.ToString().ToUpper()} | {Duration.ToString("hh\\:mm\\:ss")}";
                         }
-                        else
-                        {
-                            StartTime = DateTime.Now;
-                        }
                     }
                     else
                     {
+                        StartTime = DateTime.Now;
                         OrderDuration = "No Order";
                         UnconfirmOrder = null;
                     }
@@ -274,7 +316,6 @@ namespace WisolSMTLineApp.ViewModel
                     //    Line_ID = Setting.SelectedLine.ID,
                     //    Shift_ID = CurrentShift
                     //});
-                    var Plan = await Api.Controller.GetProductionPlanAsync(Setting.SelectedLine.LineInfoID, Setting.SelectedProduct.ProductID);
                     this.Plan = Plan;
                     if (Plan != null)
                     {
@@ -401,6 +442,22 @@ namespace WisolSMTLineApp.ViewModel
             }
         }
 
+        private ICommand _CreateFluxOrderCommand;
+        public ICommand CreateFluxOrderCommand
+        {
+            get
+            {
+                return _CreateFluxOrderCommand ?? (_CreateFluxOrderCommand = new CommandHandler(() => CreateFluxOrder(), () => CanExecute));
+            }
+        }
 
+        private ICommand _ConfirmFluxOrderCommand;
+        public ICommand ConfirmFluxOrderCommand
+        {
+            get
+            {
+                return _ConfirmFluxOrderCommand ?? (_ConfirmFluxOrderCommand = new CommandHandler(() => ConfirmFluxOrder(), () => CanExecute));
+            }
+        }
     }
 }

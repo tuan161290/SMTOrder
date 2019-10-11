@@ -1,4 +1,5 @@
-﻿using MonitorApp.ViewModel;
+﻿using MonitorApp.Model;
+using MonitorApp.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -49,6 +50,7 @@ namespace MonitorApp
             }
 
         }
+        FluxOrder NullOrder = new FluxOrder() { FLuxOrderStatus = FLuxOrderStatus.NO_ORDER, Duration = TimeSpan.FromSeconds(0) };
         public async Task MainLoop()
         {
 
@@ -82,6 +84,31 @@ namespace MonitorApp
                                     LineView.Order = p.CurrentPlan.Order;
                                     LineView.Elapse = p.CurrentPlan.Elapsed;
                                     LineView.Remain = p.CurrentPlan.Remain;
+
+                                    if (p.CurrentFluxOrder != null)
+                                    {
+                                        if (p.CurrentFluxOrder.FLuxOrderStatus == FLuxOrderStatus.WAITING)
+                                        {
+                                            p.CurrentFluxOrder.Duration = DateTime.Now - p.CurrentFluxOrder.CreatedTime;
+                                            if (p.CurrentFluxOrder.Duration.TotalHours >= 5)
+                                            {
+                                                p.CurrentFluxOrder.FLuxOrderStatus = FLuxOrderStatus.DEFROST;
+                                            }
+                                        }
+                                        else if (p.CurrentFluxOrder.FLuxOrderStatus == FLuxOrderStatus.DEFROSTING)
+                                        {
+                                            p.CurrentFluxOrder.Duration = DateTime.Now - p.CurrentFluxOrder.DefrostTimeStamp;
+                                            if (p.CurrentFluxOrder.Duration.TotalHours >= 3)
+                                            {
+                                                p.CurrentFluxOrder.FLuxOrderStatus = FLuxOrderStatus.READY;
+                                            }
+                                        }
+                                        LineView.FluxOrderVM = p.CurrentFluxOrder;
+                                    }
+                                    else
+                                    {
+                                        LineView.FluxOrderVM = NullOrder;
+                                    }
                                 }
                                 else
                                 {
@@ -90,6 +117,7 @@ namespace MonitorApp
                                     LineView.Remain = 0;
                                     LineView.ProductName = "NO_PRODUCT";
                                     LineView.WorkingStatus = WorkingStatus.NO_PRODUCTION;
+                                    LineView.FluxOrderVM = NullOrder;
                                 }
                             }
                         });
@@ -99,9 +127,28 @@ namespace MonitorApp
                 {
 
                 }
-                await Task.Delay(2000);
+                await Task.Delay(1000);
             }
         }
 
+        private async void FluxOrderAction_Click(object sender, RoutedEventArgs e)
+        {
+            var LineVM = ((Button)sender).DataContext as LineViewModel;
+            var FluxOrder = LineVM.FluxOrderVM;
+            if (FluxOrder != NullOrder)
+            {
+                if (FluxOrder.FLuxOrderStatus == FLuxOrderStatus.DEFROST)
+                {
+                    FluxOrder.FLuxOrderStatus = FLuxOrderStatus.DEFROSTING;
+                    FluxOrder.DefrostTimeStamp = DateTime.Now;
+                    await Api.Controller.UpdateFluxOrder(FluxOrder);
+                }
+                else if (FluxOrder.FLuxOrderStatus == FLuxOrderStatus.READY)
+                {
+                    FluxOrder.FLuxOrderStatus = FLuxOrderStatus.OK;
+                    await Api.Controller.UpdateFluxOrder(FluxOrder);
+                }
+            }
+        }
     }
 }

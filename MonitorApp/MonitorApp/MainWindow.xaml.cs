@@ -19,12 +19,12 @@ namespace MonitorApp
         public MainWindow()
         {
             InitializeComponent();
-            Closing += MainWindow_Closed;
+            Closed += MainWindow_Closed;
         }
 
         private void MainWindow_Closed(object sender, EventArgs e)
         {
-            
+
             Application.Current.Shutdown();
         }
     }

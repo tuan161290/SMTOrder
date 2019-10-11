@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
 using WiSolSMTRepo.Model;
+using MonitorApp.Model;
 
 namespace WisolSMTLineApp
 {
@@ -23,8 +24,8 @@ namespace WisolSMTLineApp
             _httpClient = new HttpClient(_httpClientHandler);
             //_httpClient.BaseAddress = new Uri("http://45.119.212.111:5000/");
             //_httpClient.BaseAddress = new Uri("http://192.168.0.5:5000/api/v0.1/");
-            _httpClient.BaseAddress = new Uri("http://10.70.10.52:4567/api/");
-            //_httpClient.BaseAddress = new Uri("http://localhost:4567/api/");
+            //_httpClient.BaseAddress = new Uri("http://10.70.10.52:4567/api/");
+            _httpClient.BaseAddress = new Uri("http://localhost:5000/api/");
             _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             _httpClient.MaxResponseContentBufferSize = 256000;
             TimeSpan timeout = TimeSpan.FromSeconds(4);
@@ -153,29 +154,6 @@ namespace WisolSMTLineApp
                 }
             }
         }
-        public List<Order> getLstOrderNotFinish(int lineID)
-        {
-            List<Order> LstOrderNotFinish = null;
-            try
-            {
-                string url = "production-dtl/order-not-finished/" + lineID;
-                using (var response = _httpClient.GetAsync(url).Result)
-                {
-                    if (response.IsSuccessStatusCode)
-                    {
-                        var content = response.Content.ReadAsStringAsync().Result;
-                        Response<List<Order>> resMsg = JsonConvert.DeserializeObject<Response<List<Order>>>(content);
-                        if (resMsg.Data != null)
-                            LstOrderNotFinish = resMsg.Data;
-                    }
-                }
-            }
-            catch (Exception)
-            {
-
-            }
-            return LstOrderNotFinish;
-        }
 
         public async Task<List<Order>> getLstOrderNotFinishAsync(int lineID)
         {
@@ -201,23 +179,26 @@ namespace WisolSMTLineApp
             return LstOrderNotFinish;
         }
 
+        public async Task<bool> UpdateFluxOrder(FluxOrder Obj)
+        {
+            var jsonObj = JsonConvert.SerializeObject(Obj);
+            using (var content = new StringContent(jsonObj, Encoding.UTF8, "application/json"))
+            {
+                try
+                {
+                    var ret = await _httpClient.PutAsync("FluxOrders/PutFluxOrder/" + Obj.FluxOrderID, content);
+                    var res = await ret.Content.ReadAsStringAsync();
+                    return ret.IsSuccessStatusCode;
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+            }
+        }
+
         public async Task<List<Order>> getLstOrderNotFinishAsync()
         {
-
-            //string url = "Products/GetProducts";
-            //List<Product> productList = null;
-            //using (var response = await _httpClient.GetAsync(url))
-            //{
-            //    if (response.IsSuccessStatusCode)
-            //    {
-            //        string content = await response.Content.ReadAsStringAsync();
-            //        List<Product> resMsg = JsonConvert.DeserializeObject<List<Product>>(content);
-            //        if (resMsg != null)
-            //            return resMsg;
-            //    }
-            //}
-            //return productList;
-
             List<Order> LstOrderNotFinish = null;
             try
             {

@@ -16,8 +16,21 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Grid>
-            <TextBlock Text="SMT ORDERS" FontSize="24" Foreground="Purple"/>
+        <Grid Margin="10">
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" MappingMode="RelativeToBoundingBox">
+                    <GradientStop Color="White" Offset="0.3"/>
+                    <GradientStop Color="SteelBlue" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <TextBlock Text="SMT ORDERS" Margin="84,0,0,0" FontSize="24" Foreground="SteelBlue"/>
+            <TextBlock FontWeight="DemiBold" Margin="0,0,5,0" FontSize="18" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+                <Run  Foreground="Green" Text="T"/>
+                <Run  Foreground="Blue" Text="F"/>
+                <Run  Foreground="Black" Text="S"/>
+                <Run  Foreground="White" Text=" VINA"/>
+            </TextBlock>
+            <Image Margin="10,0,0,0" Source="./Assert/Wisol.png" Width="64" HorizontalAlignment="Left"/>
         </Grid>
         <ListView Grid.Row="1" Margin="10" ItemsSource="{Binding UnconfirmOrders}">
             <ListView.Style>
