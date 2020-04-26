@@ -30,6 +30,10 @@
                 <Run  Foreground="White" Text=" VINA"/>
             </TextBlock>
             <Image Margin="10,0,0,0" Source="./Assert/Wisol.png" Width="64" HorizontalAlignment="Left"/>
+            <TextBlock VerticalAlignment="Center" Foreground="SteelBlue" Margin="80,0,0,0" FontSize="28">
+                <Run Text="LINE:"/>
+                <Run Text="{Binding Path=Name, Source={x:Static local:Setting.SelectedLine}}"/>
+            </TextBlock>
         </Grid>
         <TabControl Name="MainTab" Grid.Row="1">
             <TabControl.Resources>
@@ -57,21 +61,21 @@
                     </Setter>
                 </Style>
             </TabControl.Resources>
-            <TabItem Header="PLAN" FontSize="16">
+            <!--<TabItem Header="PLAN" FontSize="16">
                 <local:PlanControl/>
             </TabItem>
             <TabItem Header="ORDER" FontSize="16">
                 <local:OrderControl/>
-            </TabItem>
+            </TabItem>-->
             <TabItem Header="MONITOR" FontSize="16" Name="MonitorTab" >
                 <Viewbox>
                     <local:MonitorControl VerticalAlignment="Stretch"/>
                 </Viewbox>
             </TabItem>
 
-            <TabItem Header="CONFIRMATION" FontSize="16">
+            <!--<TabItem Header="CONFIRMATION" FontSize="16">
                 <local:ConfirmationWindow/>
-            </TabItem>
+            </TabItem>-->
             <TabItem Header="SETTING" FontSize="16">
                 <local:SettingControl/>
             </TabItem>

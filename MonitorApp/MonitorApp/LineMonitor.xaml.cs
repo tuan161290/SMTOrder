@@ -58,6 +58,7 @@ namespace MonitorApp
             {
                 try
                 {
+                    App.Now = await Api.Controller.GetDateTimeFromServer();
                     List<LineInfo> RunningPlans = await Api.Controller.GetRunningPlan();
                     RunningPlans.ForEach(p =>
                     {
@@ -87,22 +88,11 @@ namespace MonitorApp
 
                                     if (p.CurrentFluxOrder != null)
                                     {
-                                        if (p.CurrentFluxOrder.FLuxOrderStatus == FLuxOrderStatus.WAITING)
-                                        {
-                                            p.CurrentFluxOrder.Duration = DateTime.Now - p.CurrentFluxOrder.CreatedTime;
-                                            if (p.CurrentFluxOrder.Duration.TotalHours >= 5)
-                                            {
-                                                p.CurrentFluxOrder.FLuxOrderStatus = FLuxOrderStatus.DEFROST;
-                                            }
-                                        }
-                                        else if (p.CurrentFluxOrder.FLuxOrderStatus == FLuxOrderStatus.DEFROSTING)
-                                        {
-                                            p.CurrentFluxOrder.Duration = DateTime.Now - p.CurrentFluxOrder.DefrostTimeStamp;
-                                            if (p.CurrentFluxOrder.Duration.TotalHours >= 3)
-                                            {
-                                                p.CurrentFluxOrder.FLuxOrderStatus = FLuxOrderStatus.READY;
-                                            }
-                                        }
+                                        //if (p.CurrentFluxOrder.FLuxOrderStatus == FLuxOrderStatus.WAITING)
+                                        //{
+                                        //    p.CurrentFluxOrder.FLuxOrderStatus = FLuxOrderStatus.DEFROST;
+                                        //}
+                                        p.CurrentFluxOrder.TotalDuration = App.Now - p.CurrentFluxOrder.CreatedTime;
                                         LineView.FluxOrderVM = p.CurrentFluxOrder;
                                     }
                                     else
@@ -133,21 +123,25 @@ namespace MonitorApp
 
         private async void FluxOrderAction_Click(object sender, RoutedEventArgs e)
         {
-            var LineVM = ((Button)sender).DataContext as LineViewModel;
+            var ClickedButton = (Button)sender;
+            var LineVM = (ClickedButton).DataContext as LineViewModel;
             var FluxOrder = LineVM.FluxOrderVM;
             if (FluxOrder != NullOrder)
             {
-                if (FluxOrder.FLuxOrderStatus == FLuxOrderStatus.DEFROST)
-                {
-                    FluxOrder.FLuxOrderStatus = FLuxOrderStatus.DEFROSTING;
-                    FluxOrder.DefrostTimeStamp = DateTime.Now;
-                    await Api.Controller.UpdateFluxOrder(FluxOrder);
-                }
-                else if (FluxOrder.FLuxOrderStatus == FLuxOrderStatus.READY)
-                {
-                    FluxOrder.FLuxOrderStatus = FLuxOrderStatus.OK;
-                    await Api.Controller.UpdateFluxOrder(FluxOrder);
-                }
+                if (ClickedButton.Content.ToString() == "DEFROST")
+                    if (FluxOrder.FLuxOrderStatus == FLuxOrderStatus.WAITING)
+                    {
+                        FluxOrder.FLuxOrderStatus = FLuxOrderStatus.DEFROSTING;
+                        FluxOrder.DefrostTimeStamp = App.Now;
+                        await Api.Controller.UpdateFluxOrder(FluxOrder);
+                    }
+                if (ClickedButton.Content.ToString() == "READY")
+                    if (FluxOrder.FLuxOrderStatus == FLuxOrderStatus.DEFROSTING)
+                    {
+                        FluxOrder.FLuxOrderStatus = FLuxOrderStatus.READY;
+                        FluxOrder.SendToLineTimeStamp = App.Now;
+                        await Api.Controller.UpdateFluxOrder(FluxOrder);
+                    }
             }
         }
     }

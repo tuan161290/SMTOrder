@@ -34,7 +34,7 @@
         <TextBlock Text="Elapse PCB:" Grid.Row="2" Margin="10"/>
         <TextBox Text="{Binding Elapsed, Mode=TwoWay}" Grid.Column="1" Grid.Row="2" Margin="10"/>
 
-        <TextBlock Text="Ordered PCB:" Grid.Row="3" Margin="10"/>
+        <TextBlock Text="Remain PCB:" Grid.Row="3" Margin="10"/>
         <TextBox Text="{Binding Remain, Mode=TwoWay}" Grid.Column="1" Grid.Row="3" Margin="10"/>
 
         <Button Content="Update" Grid.Row="4" Margin="10" Click="Button_Click"/>

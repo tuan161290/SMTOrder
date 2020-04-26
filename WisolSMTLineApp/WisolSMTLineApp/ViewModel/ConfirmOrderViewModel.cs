@@ -96,7 +96,7 @@ namespace WisolSMTLineApp.ViewModel
             var order = new Order()
             {
                 Amount = Amount,
-                CreatedTime = DateTime.Now,
+                CreatedTime = App.Now,
                 LineInfoID = Setting.SelectedLine.LineInfoID,
                 ProductID = Setting.SelectedProduct.ProductID,
                 OrderStatus = OrderStatus.WAITING,

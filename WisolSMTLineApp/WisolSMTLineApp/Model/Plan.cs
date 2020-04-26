@@ -66,6 +66,20 @@ namespace WisolSMTLineApp.Model
                 }
             }
         }
+
+        private FluxOrder _FluxOrder;
+        public FluxOrder FluxOrder
+        {
+            get { return _FluxOrder; }
+            set
+            {
+                if (_FluxOrder != value)
+                {
+                    _FluxOrder = value;
+                    OnPropertyChanged(nameof(FluxOrder));
+                }
+            }
+        }
     }
 }
 

@@ -16,7 +16,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Grid Margin="10">
+        <Grid Margin="10,5">
             <Grid.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" MappingMode="RelativeToBoundingBox">
                     <GradientStop Color="White" Offset="0.3"/>
@@ -32,7 +32,7 @@
             </TextBlock>
             <Image Margin="10,0,0,0" Source="./Assert/Wisol.png" Width="64" HorizontalAlignment="Left"/>
         </Grid>
-        <ListView Grid.Row="1" Margin="10" ItemsSource="{Binding UnconfirmOrders}">
+        <ListView Grid.Row="1" Margin="10,5" ItemsSource="{Binding UnconfirmOrders}">
             <ListView.Style>
                 <Style TargetType="ListView">
                     <Setter Property="BorderThickness" Value="0"/>

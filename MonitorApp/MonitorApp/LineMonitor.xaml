@@ -17,7 +17,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Grid Margin="10">
+        <Grid Margin="10,5">
             <Grid.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" MappingMode="RelativeToBoundingBox">
                     <GradientStop Color="White" Offset="0.3"/>
@@ -33,7 +33,7 @@
             </TextBlock>
             <Image Margin="10,0,0,0" Source="./Assert/Wisol.png" Width="64" HorizontalAlignment="Left"/>
         </Grid>
-        <ListView Grid.Row="1" Margin="10" ItemsSource="{Binding LineInfos}">
+        <ListView Grid.Row="1" Margin="10,5" ItemsSource="{Binding LineInfos}">
             <ListView.Style>
                 <Style TargetType="ListView">
                     <Setter Property="BorderThickness" Value="0"/>
@@ -63,12 +63,12 @@
                     <Border BorderThickness="2" BorderBrush="Gray">
                         <Grid>
                             <Grid.RowDefinitions>
-                                <RowDefinition />
-                                <RowDefinition />
-                                <RowDefinition />
-                                <RowDefinition />
-                                <RowDefinition />
-                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
                             <Border BorderThickness="0,0,0,1" BorderBrush="LightGray" Background="{Binding WorkingStatus, Converter={StaticResource OrderStatusToColorConverter}}">
                                 <TextBlock FontSize="24">
@@ -109,17 +109,24 @@
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="2*"/>
                                     </Grid.ColumnDefinitions>
-                                    <Button Click="FluxOrderAction_Click" Background="{Binding FluxOrderVM.FLuxOrderStatus, Converter={StaticResource FluxOrderStatusToColorConverter}}">
-                                        <TextBlock FontSize="16" Foreground="Black">
-                                            <Run Text="{Binding FluxOrderVM.FLuxOrderStatus}"/>
-                                        </TextBlock>
+                                    <Button Click="FluxOrderAction_Click" 
+                                            Content="DEFROST"
+                                            Background="{Binding FluxOrderVM, Converter={StaticResource FluxOrderStatusToColorConverter}, ConverterParameter=DEFROST}">
                                     </Button>
-                                    <TextBlock FontSize="16" Grid.Column="1">
-                                        <Run Text="{Binding FluxOrderVM.Duration, StringFormat={}{0:hh\\:mm\\:ss}}"/>
+                                    <Button Click="FluxOrderAction_Click" 
+                                            Content="READY"
+                                            Background="{Binding FluxOrderVM, Converter={StaticResource FluxOrderStatusToColorConverter}, ConverterParameter=READY}" Grid.Column="1">
+                                        <!--<TextBlock FontSize="16" Foreground="Black">
+                                            <Run Text="READY"/>
+                                        </TextBlock>-->
+                                    </Button>
+
+                                    <TextBlock FontSize="16" Grid.Column="2">
+                                        <Run Text="{Binding FluxOrderVM.TotalDuration, StringFormat={}{0:hh\\:mm\\:ss}}"/>
                                     </TextBlock>
                                 </Grid>
-
                             </Border>
                         </Grid>
                     </Border>

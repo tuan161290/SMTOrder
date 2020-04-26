@@ -35,6 +35,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>OneDrive.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -64,6 +67,9 @@
       <DependentUpon>ConfirmationWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controller.cs" />
+    <Compile Include="FluxOrderUpdate.xaml.cs">
+      <DependentUpon>FluxOrderUpdate.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GPIO\GPIOHelper.cs" />
     <Compile Include="GPIO\SerialHelper.cs" />
     <Compile Include="Model\FluxOrder.cs" />
@@ -99,6 +105,10 @@
     <Compile Include="ViewModel\PlanViewModel.cs" />
     <Compile Include="ViewModel\SettingViewModel.cs" />
     <Page Include="ConfirmationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FluxOrderUpdate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -166,7 +176,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="OneDrive.ico" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Assert\Wisol.png" />
   </ItemGroup>

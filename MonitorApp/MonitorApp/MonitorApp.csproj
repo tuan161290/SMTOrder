@@ -60,7 +60,14 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Converter\OrderStatusToColorConverter.cs" />
+    <Compile Include="MasterPages\LineMaster.xaml.cs">
+      <DependentUpon>LineMaster.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\ProductMaster.xaml.cs">
+      <DependentUpon>ProductMaster.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Model\FluxOrder.cs" />
+    <Compile Include="ViewModel\LineInfoViewModel.cs" />
     <Compile Include="ViewModel\LineViewModel.cs" />
     <Page Include="LineMonitor.xaml">
       <SubType>Designer</SubType>
@@ -84,6 +91,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MasterPages\LineMaster.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MasterPages\ProductMaster.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="OrderMonitor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

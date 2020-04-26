@@ -24,8 +24,10 @@ namespace WisolSMTLineApp
             _httpClient = new HttpClient(_httpClientHandler);
             //_httpClient.BaseAddress = new Uri("http://45.119.212.111:5000/");
             //_httpClient.BaseAddress = new Uri("http://192.168.0.5:5000/api/v0.1/");
+            //_httpClient.BaseAddress = new Uri("http://10.70.10.52:6789/api/");            
             //_httpClient.BaseAddress = new Uri("http://10.70.10.52:4567/api/");
-            _httpClient.BaseAddress = new Uri("http://localhost:5000/api/");
+            _httpClient.BaseAddress = new Uri("http://localhost:6789/api/");
+            //_httpClient.BaseAddress = new Uri("http://localhost:6789/api/");
             _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             _httpClient.MaxResponseContentBufferSize = 256000;
             TimeSpan timeout = TimeSpan.FromSeconds(4);
@@ -62,6 +64,23 @@ namespace WisolSMTLineApp
                 _httpClient.Dispose();
             if (_httpClientHandler != null)
                 _httpClientHandler.Dispose();
+        }
+
+        public async Task<DateTime> GetDateTimeFromServer()
+        {
+            string url = $"Time/GetDateTimeFromServer/";
+            DateTime Now = DateTime.Now;
+            using (var response = await _httpClient.GetAsync(url))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    DateTime resMsg = JsonConvert.DeserializeObject<DateTime>(content);
+                    if (resMsg != null)
+                        return resMsg;
+                }
+            }
+            return Now;
         }
 
         public List<LineInfo> getLstLine()

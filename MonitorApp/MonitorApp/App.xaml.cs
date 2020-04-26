@@ -13,5 +13,6 @@ namespace MonitorApp
     /// </summary>
     public partial class App : Application
     {
+        public static DateTime Now { get; set; }
     }
 }

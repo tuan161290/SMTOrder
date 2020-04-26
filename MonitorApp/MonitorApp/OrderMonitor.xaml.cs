@@ -129,7 +129,7 @@ namespace MonitorApp
             }
             catch
             {
-                MessageBox.Show("Fail To start, Please run app again");
+                //MessageBox.Show("Fail To start, Please run app again");
             }
 
             while (true)

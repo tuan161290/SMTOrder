@@ -65,3 +65,7 @@ D:\Google Drive\2019\Wisol\SMT\WisolSMT\SMTOrder\MonitorApp\MonitorApp\obj\Debug
 D:\Google Drive\2019\Wisol\SMT\WisolSMT\SMTOrder\MonitorApp\MonitorApp\obj\Debug\MonitorApp.exe
 D:\Google Drive\2019\Wisol\SMT\WisolSMT\SMTOrder\MonitorApp\MonitorApp\obj\Debug\MonitorApp.pdb
 D:\Google Drive\2019\Wisol\SMT\WisolSMT\SMTOrder\MonitorApp\MonitorApp\obj\Debug\MonitorApp.csprojAssemblyReference.cache
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\SMTOrder\MonitorApp\MonitorApp\obj\Debug\MasterPages\LineMaster.g.cs
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\SMTOrder\MonitorApp\MonitorApp\obj\Debug\MasterPages\ProductMaster.g.cs
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\SMTOrder\MonitorApp\MonitorApp\obj\Debug\MasterPages\LineMaster.baml
+D:\Google Drive\2019\Wisol\SMT\WisolSMT\SMTOrder\MonitorApp\MonitorApp\obj\Debug\MasterPages\ProductMaster.baml

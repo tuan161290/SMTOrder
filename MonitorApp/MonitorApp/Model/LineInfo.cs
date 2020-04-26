@@ -13,9 +13,11 @@ namespace WiSolSMTRepo.Model
         public bool Is_active { get; set; }
         public List<PlanInfo> PlanInfos { get; set; }
         public List<FluxOrder> FluxOrders { get; set; }
-        public PlanInfo CurrentPlan { get; set; }
-        public Product CurrentProduct { get; set; }
-        public FluxOrder CurrentFluxOrder { get; set; }
         public List<Order> Orders { get; set; }
+
+        public PlanInfo CurrentPlan { get; set; }
+        public FluxOrder CurrentFluxOrder { get; set; }
+        public Product CurrentProduct { get { return CurrentPlan?.Product; } }
+        public Order CurrentOrder { get; set; }
     }
 }

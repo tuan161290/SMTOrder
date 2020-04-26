@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assert/wisol.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("onedrive.ico")]
 
 

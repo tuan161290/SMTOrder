@@ -64,16 +64,21 @@
         <!--<TextBlock Grid.Column="1" Grid.Row="5"  HorizontalAlignment="Center"/>-->
 
 
-        <TextBlock Text="Flux:" TextWrapping="Wrap" Grid.Row="7"/>
+        <TextBlock Text="Solder:" TextWrapping="Wrap" Grid.Row="7"/>
         <Grid  Grid.Column="1" Margin="10" Grid.Row="7">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button Content="Solder Order"  Command="{Binding CreateFluxOrderCommand}"/>
-            <Button Content="Solder Confirm" Command="{Binding ConfirmFluxOrderCommand}" Grid.Column="1"/>
-            <TextBlock Text="00:00:00" Grid.Column="2"/>
+            <Button Content="Solder Input"  Command="{Binding CreateFluxOrderCommand}"/>
+            <!--<Button Content="{Binding PlanView.FluxOrder.FLuxOrderStatus}" Command="{Binding CreateFluxOrderCommand}" Grid.Column="1"/>-->
+            <TextBlock  Grid.Column="1" Margin="5,1" Grid.ColumnSpan="2" FontSize="16">
+                <Run Text="{Binding PlanView.FluxOrder.FLuxOrderStatus}"/>
+                <Run Text="{Binding PlanView.FluxOrder.TotalDuration, StringFormat={}{0:hh\\:mm\\:ss}}"/>
+            </TextBlock>
+            <!--<TextBlock Text="" Grid.Column="1" HorizontalAlignment="Center"/>
+            <TextBlock Text="{Binding PlanView.FluxOrder.TotalDuration, StringFormat={}{0:hh\\:mm\\:ss}}" Grid.Column="2" HorizontalAlignment="Center"/>-->
         </Grid>
     </Grid>
 </UserControl>

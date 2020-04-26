@@ -13,5 +13,8 @@ namespace WisolSMTLineApp.Model
         public bool Is_active { get; set; }
         public List<PlanInfo> PlanInfos { get; set; }
         public PlanInfo CurrentPlan { get; set; }
+        public Product CurrentProduct { get { return CurrentPlan?.Product; } }
+        public FluxOrder CurrentFluxOrder { get; set; }
+        public Order CurrentOrder { get; set; }
     }
 }

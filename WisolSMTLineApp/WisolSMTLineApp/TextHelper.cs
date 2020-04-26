@@ -201,7 +201,12 @@ namespace WisolSMTLineApp
                 TextHelper.SaveToFile();
             }
         }
-        public static LineInfo SelectedLine { get; set; }
+
+
+        public static LineInfo selectedLine;
+        public static LineInfo SelectedLine { get { return selectedLine; } set { selectedLine = value; NotifyStaticPropertyChanged("SelectedLine"); } }
+        
+        
         static Product selectedProduct;
         public static Product SelectedProduct
         {
